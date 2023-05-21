@@ -13,6 +13,10 @@ const couerSchema = new Schema(
       type: String,
       trim: true,
     },
+    price: {
+      type: String,
+      default: "mien phi",
+    },
     videoId: { type: String },
     img: { type: String },
     slug: {

@@ -16,6 +16,18 @@ router.get(
   authorzicationControllers.decentralization("admin"),
   viewControllers.pageEditCoures
 );
+router.get(
+  "/cart/:id",
+  authorzicationControllers.isLogin,
+  authorzicationControllers.protect,
+  viewControllers.pageCart
+);
+router.get(
+  "/user/:id",
+  authorzicationControllers.isLogin,
+  authorzicationControllers.protect,
+  viewControllers.pageUser
+);
 router.get("/signup", viewControllers.pageSignup);
 router.get("/login", viewControllers.pageLogin);
 router.get(

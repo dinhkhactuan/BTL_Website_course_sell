@@ -20,7 +20,20 @@ exports.pageOverView = async (req, res, next) => {
     });
   }
 };
-
+exports.pageUser = async (req, res, next) => {
+  try {
+    // const lesson = await Lesson.find({});
+    res.status(200).render("user", {
+      title: "user",
+      // lesson,
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: "failed",
+      error,
+    });
+  }
+};
 exports.pageLogin = async (req, res, next) => {
   try {
     const user = User.findOne(User._id);
@@ -63,6 +76,18 @@ exports.pageCreateCoures = async (req, res, next) => {
 //     res.status(200).render("pageProfine");
 //   } catch (error) {}
 // };
+exports.pageCart = async (req, res, next) => {
+  try {
+    const reqid = req.params.id;
+    const coures = await Coures.findOne({ id: reqid });
+    console.log(coures);
+    res.status(200).render("cart", {
+      coures,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 exports.pageAdmin_Profine = async (req, res, next) => {
   // const user = await User.findById();
   // console.log(user);

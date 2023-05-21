@@ -2,7 +2,6 @@ const path = require("path");
 const express = require("express");
 const morgan = require("morgan");
 const app = express();
-
 // const passport = require("passport");
 // const FacebookStrategy = require("passport-facebook").Strategy;
 // const session = require("express-session");
@@ -36,31 +35,6 @@ app.use(cookieParser());
 //   })
 // );
 //set up
-
-// passport.serializeUser(function (user, done) {
-//   done(null, user);
-// });
-
-// passport.deserializeUser(function (user, done) {
-//   done(null, user);
-// });
-
-//login facebook
-// passport.use(
-//   new FacebookStrategy(
-//     {
-//       clientID: "273711807892143",
-//       clientSecret: "a7114503bb45a3d1e2bdca3ef466ed5f",
-//       callbackURL:
-//         "https://4176-2405-4802-40ea-a940-1427-f5a6-4779-5177.ngrok.io/auth/facebook/callback",
-//       profileFields: ["id", "displayName", "photos", "email"],
-//     },
-//     function (accessToken, refreshToken, profile, cb) {
-//       console.log(profile);
-//       return cb(null, profile);
-//     }
-//   )
-// );
 
 app.enable("trust proxy");
 
