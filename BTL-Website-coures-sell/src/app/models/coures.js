@@ -35,6 +35,10 @@ const couerSchema = new Schema(
         ref: "lessons",
       },
     ],
+    active: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     collection: "couers",

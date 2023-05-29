@@ -1,0 +1,45 @@
+extends main 
+block content 
+    section.h-100.h-custom(style='background-color: #eee;')
+        .container.py-5.h-100
+            .row.d-flex.justify-content-center.align-items-center.h-100
+                .col
+                    .card
+                        .card-body.p-4
+                            .row
+                                .div 
+                                    h5.mb-3.BACK
+                                        a.text-body(href='#!')
+                                            i.fas.fa-long-arrow-alt-left.me-2
+                                            | Back
+                                    hr
+                                    .d-flex.justify-content-between.align-items-center.mb-4
+                                        div
+                                            p.mb-1 Shopping cart
+                                            p.mb-0 You have 4 items in your cart
+                                        div
+                                            p.mb-0
+                                                span.text-muted Sort by:
+                                                a.text-body(href='#!')
+                                                    | price 
+                                                    i.fas.fa-angle-down.mt-1
+                                    each Coures in coures 
+                                        .card.mb-3
+                                            .card-body
+                                                .d-flex.justify-content-between
+                                                    .d-flex.flex-row.align-items-center
+                                                        div
+                                                            img.img-fluid.rounded-3(src=`${Coures.img}` alt='Shopping item' style='width: 65px;')
+                                                        .ms-3
+                                                            h5=Coures.name
+                                                            p.small.mb-0=Coures.mota
+                                                    .d-flex.flex-row.align-items-center
+                                                        div(style='width: 50px;')
+                                                            h5.fw-normal.mb-0 
+                                                        div(style='width: 80px;')
+                                                            h5.mb-0=coures.price
+                                                        a(href=`/cart/${Coures.id}` style='color: red;')
+                                                            | Mua Ngay
+                                                        a(href='#!' style='color: #cecece;')
+                                                            i.fas.fa-trash-alt
+                                

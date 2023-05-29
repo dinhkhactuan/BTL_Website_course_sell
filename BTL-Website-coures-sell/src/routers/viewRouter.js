@@ -23,6 +23,23 @@ router.get(
   viewControllers.pageCart
 );
 router.get(
+  "/view_cart",
+  authorzicationControllers.isLogin,
+  authorzicationControllers.protect,
+  viewControllers.pageViewCart
+);
+router.get(
+  "/user/profile/:id",
+  authorzicationControllers.isLogin,
+  authorzicationControllers.protect,
+  viewControllers.pageProfile
+);
+router.get(
+  "/xemsanpham/:id",
+  authorzicationControllers.isLogin,
+  viewControllers.pageXemSP
+);
+router.get(
   "/user/:id",
   authorzicationControllers.isLogin,
   authorzicationControllers.protect,

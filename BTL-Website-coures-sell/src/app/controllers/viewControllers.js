@@ -79,9 +79,45 @@ exports.pageCreateCoures = async (req, res, next) => {
 exports.pageCart = async (req, res, next) => {
   try {
     const reqid = req.params.id;
+    const coures = await Coures.findOneAndUpdate(
+      { id: reqid },
+      { active: true }
+    );
+    res.status(200).render("cart", {
+      coures,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+exports.pageViewCart = async (req, res, next) => {
+  try {
+    const coures = await Coures.find({ active: true });
+    console.log(coures);
+    res.status(200).render("view_carts", {
+      coures,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+exports.pageProfile = async (req, res, next) => {
+  try {
+    const reqid = req.params.id;
+    const user = await User.findOne({ id: reqid });
+    res.status(200).render("profile", {
+      user,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+exports.pageXemSP = async (req, res, next) => {
+  try {
+    const reqid = req.params.id;
     const coures = await Coures.findOne({ id: reqid });
     console.log(coures);
-    res.status(200).render("cart", {
+    res.status(200).render("Xem_san_pham", {
       coures,
     });
   } catch (error) {

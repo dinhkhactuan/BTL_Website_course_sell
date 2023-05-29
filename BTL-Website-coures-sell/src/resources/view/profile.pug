@@ -24,58 +24,71 @@ block content
                     .card.mb-4.mb-lg-0
                         .card-body.p-0
                             ul.list-group.list-group-flush.rounded-3
-                                a.menu_hover(href="") 
+                                a.menu_hover(href="/user") 
                                     li.list-group-item.d-flex.justify-content-between.align-items-center.p-3
                                         i.fas.fa-globe.fa-lg.text-warning
                                         p.mb-0 Dash Board
-                                a.menu_hover(href=`/user/profile/${user.id}`) 
+                                a.menu_hover(href="") 
                                     li.list-group-item.d-flex.justify-content-between.align-items-center.p-3
                                         i.fab.fa-github.fa-lg(style='color: #333333;')
                                         p.mb-0 Profile
                                 a.menu_hover(href="") 
                                     li.list-group-item.d-flex.justify-content-between.align-items-center.p-3
                                         i.fab.fa-twitter.fa-lg(style='color: #55acee;')
-                                        p.mb-0 Information
+                                        p.mb-0 test
                                 a.menu_hover(href="") 
                                     li.list-group-item.d-flex.justify-content-between.align-items-center.p-3
                                         i.fab.fa-instagram.fa-lg(style='color: #ac2bac;')
-                                        p.mb-0 Test
+                                        p.mb-0 test
                                 a.menu_hover(href="") 
                                     li.list-group-item.d-flex.justify-content-between.align-items-center.p-3
                                         i.fab.fa-facebook-f.fa-lg(style='color: #3b5998;')
-                                        p.mb-0 Test
+                                        p.mb-0 test
                 .col-lg-8
                     .card.mb-4
                         .card-body
-                            .row
-                                .col-sm-3
-                                    p.mb-0 Full Name
-                                .col-sm-9
-                                    p.text-muted.mb-0=user.username
-                            hr
-                            .row
-                                .col-sm-3
-                                    p.mb-0 Email
-                                .col-sm-9
-                                    p.text-muted.mb-0=user.email
-                            hr
-                            .row
-                                .col-sm-3
-                                    p.mb-0 Phone
-                                .col-sm-9
-                                    p.text-muted.mb-0 (097) 234-5678
-                            hr
-                            .row
-                                .col-sm-3
-                                    p.mb-0 Mobile
-                                .col-sm-9
-                                    p.text-muted.mb-0 (098) 765-4321
-                            hr
-                            .row
-                                .col-sm-3
-                                    p.mb-0 Address
-                                .col-sm-9
-                                    p.text-muted.mb-0 Bay Area, San Francisco, CA
+                            form(action="") 
+                                .row
+                                    .col-sm-3
+                                        p.mb-0 Full Name
+                                    .col-sm-9
+                                        input#PROFILE_USER_NAME(type="text" name="username" value=`${user.username }`)
+                                hr
+                                .row
+                                    .col-sm-3
+                                        p.mb-0 Email
+                                    .col-sm-9
+                                        input#PROFILE_USER_EMAIL(type="text" name="email" value=`${user.email}`)
+                                hr
+                                .row
+                                    .col-sm-3
+                                        p.mb-0 Phone
+                                    .col-sm-9
+                                        input#PROFILE_USER_PHONE(type="text" value=``)
+                                hr
+                                .row
+                                    .col-sm-3
+                                        p.mb-0 Mobile
+                                    .col-sm-9
+                                        input(type="text" value=``)
+                                hr
+                                .row
+                                    .col-sm-3
+                                        p.mb-0 Address
+                                    .col-sm-9
+                                        input(name="" type="text" value=``)
+                                        input#PROFILE_USER_ID.hiddlen_notifications(type="text" value=`${user.id}`)
+                                hr
+                                Button#BTN_UPDATE_USER(type="submit") Update
+
+                            #MESSAGE_ERROR.alert.alert-danger.hiddlen_notifications
+                                strong Error
+                                    |  Lỗi ! thông tin đăng nhập 
+                                    strong=user.provider 
+                                    |  không được sửa
+                            #MESSAGE_SUCCESS.alert.alert-success.success_message_notifications
+                                strong Success
+                                    |  Sửa thông tin thành công
                     .row
                         .col-md-6
                             .card.mb-4.mb-md-0

@@ -116,10 +116,7 @@ exports.protect = async (req, res, next) => {
     } else if (req.cookies.jwt) {
       token = req.cookies.jwt;
     }
-    if (!token)
-      return res.status(400).render("err", {
-        msg: "vui lòng đăng nhập",
-      });
+    if (!token) return res.status(400).redirect("/login");
     const decode = jwt.verify(token, "mk1");
     const CurrentUser = await User.findById({ _id: decode.id });
 
