@@ -31,7 +31,7 @@ async function handleSignUp() {
 
     console.log(res);
     if (res.data.status == "success") {
-      // alertsussess1.classList.add("active_success");
+      alert("Đăng Ký Thành Công");
       window.setTimeout(() => {
         location.assign("/login");
       }, 200);
@@ -44,6 +44,8 @@ async function handleSignUp() {
     //     alertfalse1.classList.remove("active_false");
     //   }, 5000);
     // }
-    console.log(error);
+    if (error) {
+      alert("vui lòng nhập lại");
+    }
   }
 }

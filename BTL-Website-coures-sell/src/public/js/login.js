@@ -27,16 +27,14 @@ async function handleLogin() {
       window.setTimeout(() => {
         location.assign("/");
       });
-      // } else if (res.data.status == "failed") {
-      //   alertfalse.classList.add("active_false");
+    } else if (res.data.status == "failed") {
+      alert("Tài khoản hoặc mật khẩu không chính xác");
+    } else if (res.data.status != "success") {
+      alert("Tài khoản hoặc mật khẩu không chính xác");
     }
   } catch (error) {
-    // else if (res.data.status != "success") {
-    // alertfalse.classList.add("active_false");
-    // setTimeout(() => {
-    //   alertfalse.classList.remove("active_false");
-    // }, 5000);
-    // }
-    console.log(error);
+    if (error) {
+      alert("Tài khoản hoặc mật khẩu không chính xác");
+    }
   }
 }

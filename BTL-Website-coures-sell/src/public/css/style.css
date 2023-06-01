@@ -11636,6 +11636,9 @@ img {
   margin-right: 10px;
   cursor: pointer;
 }
-div#main-wrapper{
+div#main-wrapper {
   margin-top: 56px;
+}
+#PROFILE_USER_ID {
+  display: none;
 }

@@ -44,5 +44,6 @@ nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.bg-dark
                             if(user.role==="user")
                                     a.dropdown-item(href=`/user/${user.id}`) Profile 
                                     a.dropdown-item(href=`/view_cart`) Giỏ Hàng 
+                                    a.dropdown-item(href=``)=user.price
                             a#BTN_LOGOUT.dropdown-item(href="") Logout
                                 

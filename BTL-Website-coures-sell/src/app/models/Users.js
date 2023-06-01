@@ -42,6 +42,10 @@ const User = new Schema(
       enum: ["user", "manager", "admin"],
       default: "user",
     },
+    price: {
+      type: Number,
+      default: 100000,
+    },
     active: {
       type: Boolean,
       default: true,

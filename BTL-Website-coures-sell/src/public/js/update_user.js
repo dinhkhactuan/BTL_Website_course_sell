@@ -31,15 +31,17 @@ async function handle_Update_User() {
     });
     console.log(res);
     if (res.data.status == "failed") {
-      return MESSAGE_ERROR.classList.remove("hiddlen_notifications");
+      alert("Không thành công");
     }
     if (res.data.status == "success") {
-      MESSAGE_SUCCESS.classList.remove("success_message_notifications");
+      alert("Thành công");
       setTimeout(() => {
         location.reload(true);
-      }, 1000);
+      }, 200);
     }
   } catch (error) {
-    window.location.assign("/");
+    if (error) {
+      alert("Lỗi vui lòng nhập lại");
+    }
   }
 }

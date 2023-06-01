@@ -77,18 +77,11 @@ block content
                                         p.mb-0 Address
                                     .col-sm-9
                                         input(name="" type="text" value=``)
-                                        input#PROFILE_USER_ID.hiddlen_notifications(type="text" value=`${user.id}`)
+                                        input#PROFILE_USER_ID.hiddlen_notifications( type="text" value=`${user.id}`)
                                 hr
                                 Button#BTN_UPDATE_USER(type="submit") Update
 
-                            #MESSAGE_ERROR.alert.alert-danger.hiddlen_notifications
-                                strong Error
-                                    |  Lỗi ! thông tin đăng nhập 
-                                    strong=user.provider 
-                                    |  không được sửa
-                            #MESSAGE_SUCCESS.alert.alert-success.success_message_notifications
-                                strong Success
-                                    |  Sửa thông tin thành công
+                            
                     .row
                         .col-md-6
                             .card.mb-4.mb-md-0
