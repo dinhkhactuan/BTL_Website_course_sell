@@ -71,6 +71,39 @@ exports.pageCreateCoures = async (req, res, next) => {
     });
   } catch (error) {}
 };
+exports.PageManagerCoures = async (req, res, next) => {
+  try {
+    const coures = await Coures.find({});
+    res.status(200).render("admin/ManagerCoures", {
+      title: "Update Coures",
+      coures,
+    });
+  } catch (error) {}
+};
+exports.pageManagerUsers = async (req, res, next) => {
+  try {
+    const users = await User.find({});
+    res.status(200).render("admin/ManagerUsers", {
+      users,
+    });
+  } catch (error) {}
+};
+exports.PageSystem = async (req, res, next) => {
+  const users = await User.find({});
+  try {
+    res.status(200).render("admin/System", {
+      title: "System",
+      users,
+    });
+  } catch (error) {}
+};
+exports.Pagecreate_admin = async (req, res, next) => {
+  try {
+    res.status(200).render("admin/CreateAdmin", {
+      title: "Create Admin",
+    });
+  } catch (error) {}
+};
 // exports.pageProfine = async (req, res, next) => {
 //   try {
 //     res.status(200).render("pageProfine");

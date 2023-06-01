@@ -11629,3 +11629,13 @@ img {
 .footer_social {
   font-size: 20px;
 }
+.box-img-titles {
+  background-color: #fff;
+  padding: 6px;
+  margin-left: 11px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+div#main-wrapper{
+  margin-top: 56px;
+}

@@ -40,6 +40,36 @@ router.get(
   viewControllers.pageXemSP
 );
 router.get(
+  "/admin/CreateCoures",
+  authorzicationControllers.protect,
+  authorzicationControllers.decentralization("admin", "manager"),
+  viewControllers.pageCreateCoures
+);
+router.get(
+  "/admin/ManagerCoures",
+  authorzicationControllers.protect,
+  authorzicationControllers.decentralization("admin", "manager"),
+  viewControllers.PageManagerCoures
+);
+router.get(
+  "/admin/manager-users",
+  authorzicationControllers.protect,
+  authorzicationControllers.decentralization("admin"),
+  viewControllers.pageManagerUsers
+);
+router.get(
+  "/admin/system",
+  authorzicationControllers.protect,
+  authorzicationControllers.decentralization("admin"),
+  viewControllers.PageSystem
+);
+router.get(
+  "/admin/system/create_admin",
+  authorzicationControllers.protect,
+  authorzicationControllers.decentralization("admin"),
+  viewControllers.Pagecreate_admin
+);
+router.get(
   "/user/:id",
   authorzicationControllers.isLogin,
   authorzicationControllers.protect,

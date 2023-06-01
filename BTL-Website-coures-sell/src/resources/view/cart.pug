@@ -74,16 +74,17 @@ block content
                                             hr.my-4
                                             .d-flex.justify-content-between
                                                 p.mb-2 Subtotal
-                                                p.mb-2 $4798.00
+                                                p.mb-2 0
                                             .d-flex.justify-content-between
                                                 p.mb-2 Shipping
-                                                p.mb-2 $20.00
+                                                p.mb-2 Free
                                             .d-flex.justify-content-between.mb-4
-                                                p.mb-2 Total(Incl. taxes)
-                                                p.mb-2 $4818.00
-                                            button.btn.btn-info.btn-block.btn-lg(type='button')
-                                                .d-flex.justify-content-between
-                                                    span $4818.00
-                                                    span
-                                                        | Checkout 
-                                                        i.fas.fa-long-arrow-alt-right.ms-2
+                                                p.mb-2 price
+                                                p.mb-2=coures.price
+                                            a(href="/charge") 
+                                                button.btn.btn-info.btn-block.btn-lg(type='button')
+                                                    .d-flex.justify-content-between
+                                                        span=coures.price
+                                                        span
+                                                            | Mua Ngay
+                                                            i.fas.fa-long-arrow-alt-right.ms-2

@@ -3,6 +3,7 @@ const UserRouter = require("./user");
 const couresRouter = require("./coures");
 const viewRouter = require("./viewRouter");
 const LessonRouter = require("./Lesson_nameRouter");
+const payments = require("./payment");
 // const couresquan = require('./couresquan');
 // const Create = require('./Create');
 // const Docs = require('./DocsReact');
@@ -11,6 +12,7 @@ function routs(app) {
   app.use("/api/v1/coures", couresRouter);
   app.use("/api/v1/lesson", LessonRouter);
   app.use("/api/v1/user", UserRouter);
+  app.use("/payments", payments);
   app.use("/", viewRouter);
 
   app.all("*", (req, res, next) => {

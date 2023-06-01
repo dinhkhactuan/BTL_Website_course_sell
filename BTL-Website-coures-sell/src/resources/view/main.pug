@@ -19,6 +19,14 @@ html(lang='en')
         script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js')
         script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous')
         script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js") 
+        script(src="https://js.stripe.com/v3/") 
+        script.
+            
+            const stripe = Stripe('pk_test_51NDONvECtiYfQVX1QJSfjk6sBFskLVWXSKMqsDwaOAkclYgti3gaiU2zvScxyB7OJf3LHreR0AIawVF3Yt9j8trG004oMJBp3s');
+            // Create a payment form in your HTML
+            const elements = stripe.elements();
+            const card = elements.create('card');
+            card.mount('#card-element');
         script(src='/js/login.js')
         script(src='/js/logout.js')
         script(src='/js/signUp.js')

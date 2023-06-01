@@ -6,9 +6,11 @@ const app = express();
 // const FacebookStrategy = require("passport-facebook").Strategy;
 // const session = require("express-session");
 const cookieParser = require("cookie-parser");
+const stripe = require("stripe");
 const port = process.env.PORT || 3000;
 const routs = require("./routers");
 const db = require("./config/db");
+const { log } = require("console");
 // const dotenv = require("dotenv");
 // dotenv.config({ path: "./.env" });
 
